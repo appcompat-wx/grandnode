@@ -78,7 +78,7 @@ namespace Grand.Services.Tests.Configuration
            .Build();
 
             var settings = new List<Setting>();
-            var settingObject = new ServiceCollection().ConfigureStartupConfig<ApplicationSettings>(configuration.GetSection("ApplicationSettingsSection"));
+            var settingObject = new Microsoft.Extensions.DependencyInjection.ServiceCollection().ConfigureStartupConfig<ApplicationSettings>(configuration.GetSection("ApplicationSettingsSection"));
             var properties = settingObject.GetType().GetProperties();
             foreach (var property in properties)
             {
